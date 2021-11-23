@@ -11,3 +11,5 @@ have one), their parameters. Also functionallity to see a statistics transformed
 
 Project was created in my free time as hobby to help track my work as QA Dev and my team mates in Seeburger. Not the best quality code,
 but it was fun to do and also big exercise for new skills(back end and front end).
+
+My thanks and appreciation to my colleague Lazar Milov, who gave the idea of this project and help me to realize it.
