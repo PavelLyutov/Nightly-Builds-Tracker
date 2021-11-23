@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" href="style.css">
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript" src="js/pieChart.js"></script>
+    <script type="text/javascript" th:inline="javascript" th:each="entry, stat : ${chartData}">
+        draw([[${entry.value}]], [[${stat.index}]], [[${entry.key}]]);
+    </script>
+</head>
+<body>
+    <ul>
+        <li><a id="logo">BuildTrack</a></li>
+        <li><a href="/statistics">Statistics</a></li>
+        <li><a href="/builds">Builds</a></li>
+        <li><a href="/settings">Settings</a></li>
+        <li><a href="/info">Help</a></li>
+    </ul>
+    <h1 style="margin-left: 15%;">Statistics</h1>
+    <div th:if="${chartData.size} > 0">
+        <div class="chart-container"  th:each="entry, stat : ${chartData}">
+            <div th:if="${stat.odd}">
+                <div class="chart_row">
+                    <div class="chart"><div type="chart" th:id="'chart_div' + ${stat.index}"></div></div>
+                    <div class="chart" th:with="someVariable=${stat.index + 1}"><div type="chart" th:id="'chart_div' + ${someVariable}"></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div th:unless="${chartData.size} > 0">
+        <h1 style="margin-left: 15%;">NO DATA FOR STATISTICS FOUND!</h1>
+    </div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <ul>
+        <li><a href="/home/index" id="logo">BuildTrack</a></li>
+        <li><a href="/statistics">Statistics</a></li>
+        <li><a href="/builds">Builds</a></li>
+        <li><a href="/settings">Settings</a></li>
+        <li><a href="/info">Help</a></li>
+    </ul>
+        <div class="settings-container">
+            <h1>Settings</h1>
+            <div class="form-container">
+                <form action="/settings" method="post">
+                    <label>Number of builds shown:</label>
+                    <input type="text" name="showLastBuilds" th:value="${buildNumbers}">
+                    <br>
+                    <label>Job 1:</label>
+                    <input type="text" name="job1" th:value="${jobs?.get('job1')}">
+                    <br>
+                    <label>Job 2:</label>
+                    <input type="text" name="job2" th:value="${jobs?.get('job2')}">
+                    <br>
+                    <label>Job 3:</label>
+                    <input type="text" name="job3" th:value="${jobs?.get('job3')}">
+                    <br>
+                    <label>Job 4:</label>
+                    <input type="text" name="job4" th:value="${jobs?.get('job4')}">
+                    <br>
+                    <label>Job 5:</label>
+                    <input type="text" name="job5" th:value="${jobs?.get('job5')}">
+                    <br>
+                    <label>Job 6:</label>
+                    <input type="text" name="job6" th:value="${jobs?.get('job6')}">
+                    <br>
+                    <label>Job 7:</label>
+                    <input type="text" name="job7" th:value="${jobs?.get('job7')}">
+                    <br>
+                    <label>Job 8:</label>
+                    <input type="text" name="job8" th:value="${jobs?.get('job8')}">
+                    <br>
+                    <label>Job 9:</label>
+                    <input type="text" name="job9" th:value="${jobs?.get('job9')}">
+                    <br>
+                    <label>Job 10:</label>
+                    <input type="text" name="job10" th:value="${jobs?.get('job10')}">
+                    <br>
+                    <br><br>
+                    <input type="submit" name="submit" value="Update" class="navbtn">
+                </form>
+            </div>
+        </div>
+</body>
+</html>

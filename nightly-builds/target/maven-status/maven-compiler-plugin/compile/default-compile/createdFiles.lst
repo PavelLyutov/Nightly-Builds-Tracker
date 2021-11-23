@@ -1,0 +1,11 @@
+com\example\nightly\builds\model\entities\Settings$SettingsBuilder.class
+com\example\nightly\builds\Constants.class
+com\example\nightly\builds\model\entities\Build$BuildBuilder.class
+com\example\nightly\builds\controller\SettingsController.class
+com\example\nightly\builds\NightlyBuildsApplication.class
+com\example\nightly\builds\model\entities\Job.class
+com\example\nightly\builds\model\entities\Settings.class
+com\example\nightly\builds\service\SettingsService.class
+com\example\nightly\builds\model\entities\Build.class
+com\example\nightly\builds\service\AppService.class
+com\example\nightly\builds\controller\AppController.class

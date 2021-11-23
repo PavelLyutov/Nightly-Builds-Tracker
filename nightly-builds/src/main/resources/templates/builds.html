@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <ul>
+        <li><a id="logo">BuildTrack</a></li>
+        <li><a href="/statistics">Statistics</a></li>
+        <li><a href="/builds">Builds</a></li>
+        <li><a href="/settings">Settings</a></li>
+        <li><a href="/info">Help</a></li>
+    </ul>
+        <div th:if="${data.size} > 0">
+            <div class="job-table-container" th:each="job: ${data}">
+                <span class="job-title" th:text="${job.getTitle()}" style="padding-bottom: 5px;"/>  <a th:href="${job.getJobLink()}" target="_blank"><img src="link.png" style="width: 20px; height: 20px;"></a>
+                <br>
+                <table th:with="j = ${job}">
+                    <tr>
+                        <th>Status</th>
+                        <th>Number</th>
+                        <th>Date/Time</th>
+                        <th>Description</th>
+                        <th>Allure</th>
+                        <th>Console</th>
+                    </tr>
+                    <tr th:each="build: ${j.getBuilds()}">
+                        <td>
+                            <a th:href="${build?.getBuildLink()}" th:switch="${build.getStatus()}" target="_blank">
+                                <img th:case="'SUCCESS'" src="success.png"/>
+                                <img th:case="'UNSTABLE'" src="unstable.png"/>
+                                <img th:case="'FAILURE'" src="failure.png"/>
+                                <img th:case="'ABORTED'" src="aborted.png"/>
+                                <img th:case="*" src="running.png"/>
+                            </a>
+                        </td>
+                        <td th:text="${build?.getId()}"/>
+                        <td th:text="${build?.getTimestamp()}"/>
+                        <td th:text="${build?.getDescription()}"/>
+                        <td>
+                            <a th:href="${build?.getAllureLink()}" target="_blank">
+                                <img src="allure.png">
+                            </a>
+                        </td>
+                        <td>
+                            <a th:href="${build?.getConsoleLink()}" target="_blank">
+                                <img src="console.png">
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div th:unless="${data.size} > 0">
+            <h1 style="margin-left: 15%;">NO DATA FOUND, PLEASE CONFIGURE THE JOBS FOR THE BUILDS YOU WANT TO TRACK</h1>
+        </div>
+</body>
+</html> 

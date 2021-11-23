@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <ul>
+        <li><a href="/home/index" id="logo">BuildTrack</a></li>
+        <li><a href="/statistics">Statistics</a></li>
+        <li><a href="/builds">Builds</a></li>
+        <li><a href="/settings">Settings</a></li>
+        <li><a href="/info">Help</a></li>
+    </ul>
+        <div class="job-table-container">
+            <h1>How to use</h1>
+            <p>Welcome to BuildTrack. This is a simple app which gives you an overview on one or more Jenkins jobs. Here you will find useful information on how to use the app.</p>
+            <h2>The 'Dashboard' page</h2>
+            <p>
+                This page presents the last (N)* builds for all (configured jobs)**. The information contained for each job/build is: <br><br>
+                - Status (shown as icon (<img src="success.png" style="width: 15px; height: 15px;"/>/<img src="unstable.png" style="width: 15px; height: 15px;"/>/<img src="failure.png" style="width: 15px; height: 15px;"/>), which is clickable and will link to the build in question);<br>
+                - Build number (ID);<br>
+                - Build description;<br>
+                - Date/time on which the build was triggered;<br>
+                - Parameters (Hover on the <img src="params.png" style="width: 15px; height: 15px;"/> icon to see the list of parameters);<br>
+                - Link to the Allure report (if present)*** Click the <img src="allure.png" style="width: 15px; height: 15px;"/> icon to be taken to the report;<br>
+                - Link to the full console of the build. Click the <img src="console.png" style="width: 15px; height: 15px;"/> icon to be taken to the console log;<br>
+                
+            </p>
+            <p style="font-size: 15px;">
+                *Number of builds shown is configurable through the 'Settings' page;<br>
+                **Shown Jenkins jobs are also configurable through the 'Settings';<br>
+                ***It is possible that your job does not have an Allure report. The link will still open, but it will most likely show a 404 Not found.
+            </p><br>
+            <h2>The 'Settings' page</h2>
+            <p>Here you can configure for which Jenkins jobs you want to see builds. Also, you can change the number of last builds shown for each job.</p>
+            
+        </div>
+</body>
+</html>
